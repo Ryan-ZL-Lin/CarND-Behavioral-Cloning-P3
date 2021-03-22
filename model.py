@@ -12,12 +12,6 @@ with open('/opt/carnd_p3/data/driving_log.csv') as csvfile:
     next(reader)
     for line in reader:
         lines.append(line)
-        
-with open('sharp_curve/driving_log.csv') as csvfile:
-    reader = csv.reader(csvfile)
-    next(reader)
-    for line in reader:
-        lines.append(line)
 
 with open('recovery/driving_log.csv') as csvfile:
     reader = csv.reader(csvfile)
@@ -25,17 +19,35 @@ with open('recovery/driving_log.csv') as csvfile:
     for line in reader:
         lines.append(line)
         
-#with open('manual_data2/driving_log.csv') as csvfile:
-#    reader = csv.reader(csvfile)
-#    next(reader)
-#    for line in reader:
-#        lines.append(line)
+with open('left_curve/driving_log.csv') as csvfile:
+    reader = csv.reader(csvfile)
+    next(reader)
+    for line in reader:
+        lines.append(line)
+        
+with open('left_curve2/driving_log.csv') as csvfile:
+    reader = csv.reader(csvfile)
+    next(reader)
+    for line in reader:
+        lines.append(line)
+        
+with open('right_curve/driving_log.csv') as csvfile:
+    reader = csv.reader(csvfile)
+    next(reader)
+    for line in reader:
+        lines.append(line)
+        
+with open('bridge/driving_log.csv') as csvfile:
+    reader = csv.reader(csvfile)
+    next(reader)
+    for line in reader:
+        lines.append(line)
         
 from sklearn.model_selection import train_test_split
 train_samples, validation_samples = train_test_split(lines, test_size=0.2)
 
 #the correction of left and right image on steering angle
-correction = 0.4
+correction = 0.5
 
 ### Use Generator to process data in batches
 def generator(samples, batch_size=32):
@@ -145,12 +157,22 @@ model.add(Conv2D(64, (3, 3), activation="relu"))
 
 
 model.add(Flatten())
-model.add(Dropout(0.5))
+model.add(Dropout(0.3))
+model.add(Activation('relu'))
           
 # Dense Layers
 model.add(Dense(100))
+model.add(Dropout(0.3))
+model.add(Activation('relu'))
+
 model.add(Dense(50))
+model.add(Dropout(0.3))
+model.add(Activation('relu'))
+
 model.add(Dense(10))
+model.add(Dropout(0.3))
+model.add(Activation('relu'))
+
 model.add(Dense(1))
 
 ### model Structure End ###

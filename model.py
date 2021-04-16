@@ -47,7 +47,7 @@ from sklearn.model_selection import train_test_split
 train_samples, validation_samples = train_test_split(lines, test_size=0.2)
 
 #the correction of left and right image on steering angle
-correction = 0.4
+correction = 0.2
 
 ### Use Generator to process data in batches
 def generator(samples, batch_size=32):

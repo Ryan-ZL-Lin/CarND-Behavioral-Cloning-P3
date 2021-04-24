@@ -13,35 +13,48 @@ with open('/opt/carnd_p3/data/driving_log.csv') as csvfile:
     for line in reader:
         lines.append(line)
 
-#with open('recovery/driving_log.csv') as csvfile:
-#    reader = csv.reader(csvfile)
-#    next(reader)
-#    for line in reader:
-#        lines.append(line)
+with open('recovery/driving_log.csv') as csvfile:
+    reader = csv.reader(csvfile)
+    next(reader)
+    for line in reader:
+        lines.append(line)
+
+with open('round1/driving_log.csv') as csvfile:
+    reader = csv.reader(csvfile)
+    next(reader)
+    for line in reader:
+        lines.append(line)
         
-#with open('left_curve/driving_log.csv') as csvfile:
-#    reader = csv.reader(csvfile)
-#    next(reader)
-#    for line in reader:
-#        lines.append(line)
+with open('round2/driving_log.csv') as csvfile:
+    reader = csv.reader(csvfile)
+    next(reader)
+    for line in reader:
+        lines.append(line)
         
-#with open('left_curve2/driving_log.csv') as csvfile:
-#    reader = csv.reader(csvfile)
-#    next(reader)
-#    for line in reader:
-#        lines.append(line)
+with open('round3/driving_log.csv') as csvfile:
+    reader = csv.reader(csvfile)
+    next(reader)
+    for line in reader:
+        lines.append(line)
         
-#with open('right_curve/driving_log.csv') as csvfile:
-#    reader = csv.reader(csvfile)
-#    next(reader)
-#    for line in reader:
-#        lines.append(line)
+with open('round4/driving_log.csv') as csvfile:
+    reader = csv.reader(csvfile)
+    next(reader)
+    for line in reader:
+        lines.append(line)
         
-#with open('bridge/driving_log.csv') as csvfile:
-#    reader = csv.reader(csvfile)
-#    next(reader)
-#    for line in reader:
-#        lines.append(line)
+with open('round5/driving_log.csv') as csvfile:
+    reader = csv.reader(csvfile)
+    next(reader)
+    for line in reader:
+        lines.append(line)
+        
+
+with open('round6/driving_log.csv') as csvfile:
+    reader = csv.reader(csvfile)
+    next(reader)
+    for line in reader:
+        lines.append(line)
         
 from sklearn.model_selection import train_test_split
 train_samples, validation_samples = train_test_split(lines, test_size=0.2)
@@ -149,29 +162,29 @@ model.add(Lambda(lambda x: (x / 255.0) - 0.5, input_shape=(160,320,3)))
 model.add(Cropping2D(cropping=((70,25), (0,0))))
 
 # Convolution Layers
-model.add(Conv2D(24, (5, 5), strides=(2, 2), activation="elu"))
-model.add(Conv2D(36, (5, 5), strides=(2, 2), activation="elu"))
-model.add(Conv2D(48, (5, 5), strides=(2, 2), activation="elu"))
-model.add(Conv2D(64, (3, 3), activation="elu"))
-model.add(Conv2D(64, (3, 3), activation="elu"))
+model.add(Conv2D(24, (5, 5), strides=(2, 2), activation="relu"))
+model.add(Conv2D(36, (5, 5), strides=(2, 2), activation="relu"))
+model.add(Conv2D(48, (5, 5), strides=(2, 2), activation="relu"))
+model.add(Conv2D(64, (3, 3), activation="relu"))
+model.add(Conv2D(64, (3, 3), activation="relu"))
 
 
 model.add(Flatten())
-model.add(Dropout(0.2))
-model.add(Activation('elu'))
+model.add(Dropout(0.1))
+model.add(Activation('relu'))
           
 # Dense Layers
 model.add(Dense(100))
-model.add(Dropout(0.2))
-model.add(Activation('elu'))
+model.add(Dropout(0.1))
+model.add(Activation('relu'))
 
 model.add(Dense(50))
-model.add(Dropout(0.2))
-model.add(Activation('elu'))
+model.add(Dropout(0.1))
+model.add(Activation('relu'))
 
 model.add(Dense(10))
-model.add(Dropout(0.2))
-model.add(Activation('elu'))
+model.add(Dropout(0.1))
+model.add(Activation('relu'))
 
 model.add(Dense(1))
 
@@ -210,6 +223,6 @@ plt.savefig('loss_visualization.png')
 
 exit()    
 
-    
+#python drive.py model.h5 test2
     
 

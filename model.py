@@ -154,6 +154,7 @@ from keras.layers.pooling import MaxPooling2D
 from keras.layers import Cropping2D
 from keras.layers import Lambda
 import tensorflow as tf
+from keras.optimizers import Adam
 
 model = Sequential()
 # data normalization
@@ -194,7 +195,7 @@ print ('Training starts...')
 from keras.models import Model
 import matplotlib.pyplot as plt
 
-model.compile(loss='mse', optimizer = 'adam')
+model.compile(loss='mse', optimizer=Adam(lr=0.001))
 history_object = model.fit_generator(train_generator, 
                                      steps_per_epoch = math.ceil(len(train_samples)/batch_size),
                                      validation_data = validation_generator,

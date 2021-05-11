@@ -104,15 +104,8 @@ I then recorded the vehicle recovering from the left side and right sides of the
 ![alt text][image4]
 ![alt text][image5]
 
-Then I repeated this process on track two in order to get more data points.
 
-To augment the data sat, I also flipped images and angles thinking that this would ... For example, here is an image that has then been flipped:
-
-![alt text][image6]
-![alt text][image7]
-
-Etc ....
-
+To augment the data sat, I also flipped images and angles thinking that this would avoid overfitting and make the model more generated. (code line 102 ~ 124)
 After the collection process, I had X number of data points. I then preprocessed this data by ...
 
 

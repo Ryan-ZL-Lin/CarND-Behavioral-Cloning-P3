@@ -19,43 +19,32 @@ with open('recovery/driving_log.csv') as csvfile:
     for line in reader:
         lines.append(line)
 
-with open('round1/driving_log.csv') as csvfile:
+with open('round11/driving_log.csv') as csvfile:
     reader = csv.reader(csvfile)
     next(reader)
     for line in reader:
         lines.append(line)
-        
-with open('round2/driving_log.csv') as csvfile:
-    reader = csv.reader(csvfile)
-    next(reader)
-    for line in reader:
-        lines.append(line)
-        
-with open('round3/driving_log.csv') as csvfile:
-    reader = csv.reader(csvfile)
-    next(reader)
-    for line in reader:
-        lines.append(line)
-        
-with open('round4/driving_log.csv') as csvfile:
-    reader = csv.reader(csvfile)
-    next(reader)
-    for line in reader:
-        lines.append(line)
-        
-with open('round5/driving_log.csv') as csvfile:
-    reader = csv.reader(csvfile)
-    next(reader)
-    for line in reader:
-        lines.append(line)
-        
 
-with open('round6/driving_log.csv') as csvfile:
+        
+with open('round22/driving_log.csv') as csvfile:
     reader = csv.reader(csvfile)
     next(reader)
     for line in reader:
         lines.append(line)
-        
+
+
+with open('round33/driving_log.csv') as csvfile:
+    reader = csv.reader(csvfile)
+    next(reader)
+    for line in reader:
+        lines.append(line)
+      
+with open('round44/driving_log.csv') as csvfile:
+    reader = csv.reader(csvfile)
+    next(reader)
+    for line in reader:
+        lines.append(line)
+     
 from sklearn.model_selection import train_test_split
 train_samples, validation_samples = train_test_split(lines, test_size=0.2)
 

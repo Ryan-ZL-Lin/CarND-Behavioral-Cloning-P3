@@ -53,19 +53,19 @@ The model.py file contains the code for training and saving the convolution neur
 
 #### 1. An appropriate model architecture has been employed
 
-My model consists of a convolution neural network (5 layers) with 5x5 and 3x3 filter sizes and depths between 24 and 64 (model.py lines 155 ~ 159) 
+My model consists of a convolution neural network (5 layers) with 5x5 and 3x3 filter sizes and depths between 24 and 64 (model.py lines 156 ~ 161) 
 
-The model includes RELU layers to introduce nonlinearity (code line 162 ~ 179), and the data is normalized in the model using a Keras lambda layer (code line 150). 
+The model includes RELU layers to introduce nonlinearity (code line 164 ~ 181), and the data is normalized in the model using a Keras lambda layer (code line 152). 
 
 #### 2. Attempts to reduce overfitting in the model
 
-The model contains dropout layers in order to reduce overfitting (model.py lines 162 ~ 179). 
+The model contains dropout layers in order to reduce overfitting (model.py lines 164 ~ 181). 
 
-The model was trained and validated on different data sets to ensure that the model was not overfitting (code line 9-46). The model was tested by running it through the simulator and ensuring that the vehicle could stay on the track.
+The model was trained and validated on different data sets to ensure that the model was not overfitting (code line 9-48). The model was tested by running it through the simulator and ensuring that the vehicle could stay on the track.
 
 #### 3. Model parameter tuning
 
-The model used an adam optimizer, and the learning rate was set to 0.001 (model.py line 187).
+The model used an adam optimizer, and the learning rate was set to 0.001 (model.py line 189).
 
 #### 4. Appropriate training data
 
@@ -78,7 +78,7 @@ For details about how I created the training data, see the next section.
 
 #### 1. Solution Design Approach
 
-The overall strategy for deriving a model architecture was to ...
+The overall strategy for deriving a model architecture was to use NVIDIA model first, then adjust hyper parameters progressivley.
 
 My first step was to use a recommended network from NVIDAI, I thought this model might be appropriate because it's a propven model and more complcated than the one introduced previously.
 

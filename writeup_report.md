@@ -65,7 +65,7 @@ The model was trained and validated on different data sets to ensure that the mo
 
 #### 3. Model parameter tuning
 
-The model used an adam optimizer, and the learning rate was set to 0.001 (model.py line 189). The reason to use 0.0001 as the initial learning rate is that it is a common learning rate to use.
+The model used an adam optimizer, and the learning rate was set to 0.001 (model.py line 189). The reason to use 0.001 as the initial learning rate is that it is a common learning rate to use.
 
 #### 4. Appropriate training data
 

@@ -104,7 +104,7 @@ I then recorded the vehicle recovering from the left side and right sides of the
 ![alt text][image5]
 
 
-To augment the data sat, I also flipped images and angles thinking that this would avoid overfitting and make the model more generated. (code line 102 ~ 124). 
+To augment the data sat, I also flipped images and angles thinking that this would avoid overfitting and make the model more generated. (code line 102 ~ 125). 
 After the collection process, I had X number of data points. I then preprocessed this data by ...
 
 

@@ -38,7 +38,6 @@ with open('round33/driving_log.csv') as csvfile:
     next(reader)
     for line in reader:
         lines.append(line)
-
 '''
 with open('round44/driving_log.csv') as csvfile:
     reader = csv.reader(csvfile)
@@ -46,6 +45,7 @@ with open('round44/driving_log.csv') as csvfile:
     for line in reader:
         lines.append(line)
 '''
+
 
 from sklearn.model_selection import train_test_split
 train_samples, validation_samples = train_test_split(lines, test_size=0.2)
